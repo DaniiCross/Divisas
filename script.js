@@ -41,6 +41,7 @@ function llenarSelectDos(){
     alert("RESULTADO: " + resultado);
     //console.log(resultado);
 }
+
 */
 
 

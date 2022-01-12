@@ -53,7 +53,7 @@ function pregunta(){
        const valorMonedaUno = parseFloat(valuesPorMoneda[monedaUno])
        const valorMonedaDos = parseFloat(valuesPorMoneda[monedaDos]);
        const resultado = (valorMonedaUno/valorMonedaDos)*valor;
-       //alert("RESULTADO: " + resultado);
+       alert("RESULTADO: " + resultado);
     }else{
         alert("Confirma el cambio que quieres hacer");
     }

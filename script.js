@@ -1,4 +1,4 @@
-
+let form = document.querySelector('form');
 const valuesPorMoneda = JSON.parse('{"Dolar": 4.047, "Peso Mexicano": 194 , "Peso Colombiano": 1, "Euro": 4.552, "Libra Esterlina": 5.355}')
 
 //{"Dolar": 4.047.55, "Peso Mexicano": 194.23, "Peso Colombiano": 1.00, "Euro": 4.552.03, "Libra Esterlina": 5.355.14}
@@ -8,6 +8,7 @@ llenarSelectDos();
 mensajeConfirmacion();
 
 const moneda_para_convertir = document.getElementById("monedaUno");
+
 
 function llenarSelect(){
     let monedas = ['Elige tu Moneda','Dolar','Peso Mexicano','Peso Colombiano','Euro','Libra Esterlina'];
@@ -21,7 +22,7 @@ function llenarSelect(){
 }
 
 function llenarSelectDos(){
-    let monedas = ['Elige tu Moneda', 'Dolar', 'Peso Mexicano', 'Peso Colombiano', 'Euro', 'Libra Esterlina']; //creamos la variable array
+    monedas = ['Elige tu Moneda', 'Dolar', 'Peso Mexicano', 'Peso Colombiano', 'Euro', 'Libra Esterlina']; //creamos la variable array
     let select =document.getElementById("monedaDos"); //seleccionamos el selec por su id
 
         for(let i=0; i < monedas.length; i++){
@@ -31,31 +32,24 @@ function llenarSelectDos(){
     }
 }
 
-/*function convertir(){
-    const valor = parseFloat(document.querySelector('#dinero').value);
-    let monedaUno = document.getElementById("monedaUno").value;
-    let monedaDos = document.getElementById("monedaDos").value;
-    const valorMonedaUno = parseFloat(valuesPorMoneda[monedaUno])
-    const valorMonedaDos = parseFloat(valuesPorMoneda[monedaDos]);
-    const resultado = (valorMonedaUno/valorMonedaDos)*valor;
-    alert("RESULTADO: " + resultado);
-    //console.log(resultado);
-}
-
-*/
-
 
 
 function pregunta(){
-    if (confirm('¿Estas seguro de realizar este cambio') == true){
-       const valor = parseFloat(document.querySelector('#dinero').value);
-       let monedaUno = document.getElementById("monedaUno").value;
-       let monedaDos = document.getElementById("monedaDos").value;
-       const valorMonedaUno = parseFloat(valuesPorMoneda[monedaUno])
-       const valorMonedaDos = parseFloat(valuesPorMoneda[monedaDos]);
-       const resultado = (valorMonedaUno/valorMonedaDos)*valor;
-       alert("RESULTADO: " + resultado);
+    let monedaUno = document.getElementById("monedaUno").value;
+    let monedaDos = document.getElementById("monedaDos").value;
+    if (monedaUno===monedaDos){
+        alert("Verifique el cambio que desea realizar");
+    }
+    else if(monedaUno === ('Elige tu Moneda') || monedaDos === ('Elige tu Moneda')){
+        alert("Elija un tipo de moneda");
+    }else if (confirm('¿Realizar este cambio?') == true){
+        const valor = parseFloat(document.querySelector('#dinero').value);
+        const valorMonedaUno = parseFloat(valuesPorMoneda[monedaUno])
+        const valorMonedaDos = parseFloat(valuesPorMoneda[monedaDos]);
+        const resultado = (valorMonedaUno/valorMonedaDos)*valor;
+        alert("RESULTADO: " + resultado);
     }else{
-        alert("Confirma el cambio que quieres hacer");
+            alert("Confirma el cambio que quieres hacer");
     }
 }
+

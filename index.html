@@ -24,11 +24,11 @@
             </div>
         <form action="">
             <div>
-                <input type="text" id="dinero" placeholder="Cantidad de Dinero">
+                <input type="number" id="dinero" placeholder="Cantidad de Dinero" required>
             </div>
             <div id="items">
                 <select name="moneda" class="moneda" id="monedaUno"></select>
-                <select name="moneda" class="moneda" id="monedaDos">
+                <select name="moneda" class="moneda" id="monedaDos"></select>
                      <!-- si no se hace con el metodo de array
                     <option value="0">Elige tu moneda</option>
                     <option value="dolar" id="dolarDos">Dólar</option>
@@ -36,9 +36,9 @@
                     <option value="pesoColombiano" id="colombiaDOs">Peso colombiano</option>
                     <option value="euro" id="euroDos">Euro</option>
                     <option value="libraEsterlina" id="libraDOs">Libra esterlina</option>
-                --> </select>
+                --> 
             
-                 <button id="btnConvertir"  value="convertir" onclick="pregunta()">Convertir</button>
+                 <button  id="btnConvertir"  value="convertir" onclick="pregunta()">Convertir</button>
                  <!--onclick="convertir()"-->
             </div>
         </form>
